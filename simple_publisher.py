@@ -9,7 +9,7 @@ if __name__ == '__main__':
     rate = rospy.Rate(20)
     pub = rospy.Publisher("my_random_float", Float32, queue_size = 10)
     while not rospy.is_shutdown():
-      num = randint(0,10)
+      num = randint(1,10)
       rospy.loginfo("The random number is: %s",num)
       pub.publish(num)
       rate.sleep()
