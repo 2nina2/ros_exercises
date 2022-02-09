@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy, math, random
 from sensor_msgs.msg import LaserScan
-from random import randint
+from random import uniform
 
 
 if __name__ == '__main__':
@@ -23,7 +23,7 @@ if __name__ == '__main__':
       ranges = []
       length = int((scann.angle_max - scann.angle_min)/scann.angle_increment) + 1
       for i in range(length):
-        ranges.append(randint(scann.range_min,scann.range_max))
+        ranges.append(uniform(scann.range_min,scann.range_max))
       scann.ranges = ranges
       print(scann)
       pub.publish(scann)
