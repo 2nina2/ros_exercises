@@ -10,7 +10,7 @@ if __name__ == '__main__':
     pub = rospy.Publisher("my_random_float", Float32, queue_size = 10)
     while not rospy.is_shutdown():
       num = uniform(1,10.0)
-      rospy.loginfo("The random number is: %s",num)
+      #rospy.loginfo("The random number is: %s",num)
       pub.publish(num)
       rate.sleep()
   except rospy.ROSInterruptException:
